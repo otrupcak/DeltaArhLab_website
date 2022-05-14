@@ -19,12 +19,20 @@
     {{-- ubaciti invisible lg:visible kada se implementira meni za male uređaje --}}
     <nav class="basis-2/3 grid grid-flow-col items-center justify-items-center font-medium text-gray-700">
         @if (Request::segment(1) == "about-us")
-        <a href="/about-us" class="w-5/12 min-w-fit h-1/2 rounded-2xl bg-gray-500 text-white text-center py-1.5 px-2 transition-all duration-300 first-letter">O nama</a>
+        <a href="/about-us" class="w-6/12 min-w-fit h-1/2 rounded-2xl border-gray-200 border text-red-500 bg-gradient-to-br from-[#cacaca] via-gray-200 to-gray-100 text-center py-1.5 px-2 cursor-default">O nama</a>
         @else
         <a href="/about-us" class="w-5/12 hover:w-6/12 min-w-fit h-1/2 rounded-2xl shadow-neu1 hover:shadow-neu2 hover:text-red-500 text-center py-1.5 px-2 transition-all duration-300">O nama</a>
         @endif
+        @if (Request::segment(1) == "projects")
+        <a href="/projects" class="w-6/12 min-w-fit h-1/2 rounded-2xl border-gray-200 border text-red-500 bg-gradient-to-br from-[#cacaca] via-gray-200 to-gray-100 text-center py-1.5 px-2 cursor-default">Projekti</a>
+        @else
         <a href="/projects" class="w-5/12 hover:w-6/12 min-w-fit h-1/2 rounded-2xl shadow-neu1 hover:shadow-neu2 hover:text-red-500 text-center py-1.5 px-2 transition-all duration-300">Projekti</a>
+        @endif
+        @if (Request::segment(1) == "contact-us")
+        <a href="/contact-us" class="w-6/12 min-w-fit h-1/2 rounded-2xl border-gray-200 border text-red-500 bg-gradient-to-br from-[#cacaca] via-gray-200 to-gray-100 text-center py-1.5 px-2 cursor-default">Kontakt</a>
+        @else
         <a href="/contact-us" class="w-5/12 hover:w-6/12 min-w-fit h-1/2 rounded-2xl shadow-neu1 hover:shadow-neu2 hover:text-red-500 text-center py-1.5 px-2 transition-all duration-300">Kontakt</a>
+        @endif
     </nav>
     {{-- slajder za biranje između engleskog i srpskog --}}
     {{-- <div class="basis-1/6 grid gap-2 grid-flow-col justify-end content-center pr-5">
