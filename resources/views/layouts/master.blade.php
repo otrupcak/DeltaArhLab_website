@@ -10,7 +10,7 @@
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
-<body class="relative bg-gray-200 h-[300vh]">
+<body class="relative bg-gray-200 min-h-[300vh]">
     <x-header secret={{$secret}}>
     </x-header>
 
@@ -19,7 +19,7 @@
     </main>
 
     <footer class="absolute grid grid-cols-4 inset-x-0 bottom-0 bg-gray-200 h-fit shadow-neu1">
-        <p class=" col-start-2 col-span-2 justify-self-center self-end pb-3 mt-3 cursor-default">&#169; Delta Arh Lab <script>document.write(/\d{4}/.exec(Date())[0])</script> <span class="hover:text-red-500 cursor-none" title="Hey, thansk for stopping by! It really means a lot!">&#9829;</span></p>
+        <p class="block col-start-2 col-span-2 justify-self-center self-end pb-3 mt-3 cursor-default">&#169; Delta Arh Lab <script>document.write(/\d{4}/.exec(Date())[0])</script> <span class="hover:text-red-500 cursor-none" title="Hey, thansk for stopping by! It really means a lot!">&#9829;</span></p>
     </footer>
 
     <x-social-sidebar>
