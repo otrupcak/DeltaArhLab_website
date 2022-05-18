@@ -1,4 +1,5 @@
 <header class="sticky top-0">
+    {{-- navigacija za komp --}}
     <div class="hidden lg:flex flex-row h-20 shadow-lg bg-gray-200">
         <div class="basis-1/6 justify-self-start self-center pl-5 pr-10">
             <a href="/">
@@ -8,17 +9,17 @@
 
         <nav class="basis-2/3 grid grid-flow-col items-center justify-items-center font-medium text-gray-700">
             @if (Request::segment(1) == "about-us")
-            <a href="/about-us" class="w-6/12 min-w-fit h-1/2 rounded-2xl text-red-500 bg-gradient-to-br from-[#cacaca] via-gray-200 to-gray-100 text-center py-1.5 px-2 cursor-default">O nama</a>
+            <a href="#" class="w-6/12 min-w-fit h-1/2 rounded-2xl text-red-500 bg-gradient-to-br from-[#cacaca] via-gray-200 to-gray-100 text-center py-1.5 px-2 cursor-default">O nama</a>
             @else
             <a href="/about-us" class="w-5/12 hover:w-6/12 min-w-fit h-1/2 rounded-2xl shadow-neu1 hover:shadow-neu2 hover:text-red-500 text-center py-1.5 px-2 lg:transition-all lg:duration-300">O nama</a>
             @endif
             @if (Request::segment(1) == "projects")
-            <a href="/projects" class="w-6/12 min-w-fit h-1/2 rounded-2xl text-red-500 bg-gradient-to-br from-[#cacaca] via-gray-200 to-gray-100 text-center py-1.5 px-2 cursor-default">Projekti</a>
+            <a href="#" class="w-6/12 min-w-fit h-1/2 rounded-2xl text-red-500 bg-gradient-to-br from-[#cacaca] via-gray-200 to-gray-100 text-center py-1.5 px-2 cursor-default">Projekti</a>
             @else
             <a href="/projects" class="w-5/12 hover:w-6/12 min-w-fit h-1/2 rounded-2xl shadow-neu1 hover:shadow-neu2 hover:text-red-500 text-center py-1.5 px-2 lg:transition-all lg:duration-300">Projekti</a>
             @endif
             @if (Request::segment(1) == "contact-us")
-            <a href="/contact-us" class="w-6/12 min-w-fit h-1/2 rounded-2xl text-red-500 bg-gradient-to-br from-[#cacaca] via-gray-200 to-gray-100 text-center py-1.5 px-2 cursor-default">Kontakt</a>
+            <a href="#" class="w-6/12 min-w-fit h-1/2 rounded-2xl text-red-500 bg-gradient-to-br from-[#cacaca] via-gray-200 to-gray-100 text-center py-1.5 px-2 cursor-default">Kontakt</a>
             @else
             <a href="/contact-us" class="w-5/12 hover:w-6/12 min-w-fit h-1/2 rounded-2xl shadow-neu1 hover:shadow-neu2 hover:text-red-500 text-center py-1.5 px-2 lg:transition-all lg:duration-300">Kontakt</a>
             @endif
@@ -32,11 +33,14 @@
     </div>
 
     {{-- navigacija za mobilne i tablete --}}
-    <div x-data="{ open: false }" class=" flex-row lg:hidden min-h-20 shadow-lg bg-gray-200" :class="{'shadow-lg':!open}">
+    <div x-data="{ open: false }" class=" flex-row lg:hidden min-h-max shadow-lg bg-gray-200" :class="{'shadow-lg':!open}">
         <div class="flex h-20 mb-3" :class="{'bg-red-500':open, 'shadow-neu1':open}">
-            <a href="/" class=" self-center basis-3/4 ml-6">
-                <x-application-logo class="fill-gray-100 h-16 place-self-center" />
-            </a>
+            <div class="self-center basis-3/4 ml-6">
+                <a href="/">
+                    <x-application-logo class="fill-gray-100 h-16 place-self-center">
+                    </x-application-logo>
+                </a>
+            </div>
 
             <button class="relative basis-1/4 text-gray-700 focus:outline-none" @click="open = !open" :class="{'text-gray-100':open}">
                 <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -51,30 +55,27 @@
             <div class="grid grid-flow-row text-center">
 
                 @if (Request::segment(1) == "about-us")
-                <div class="w-full justify-self-center align-middle uppercase py-5 text-red-500">O nama</div>
+                <a href="/about-us" class="w-full justify-self-center align-middle uppercase py-5 text-red-500">O nama</a>
                 @else
                 <a href="/about-us" class="w-full justify-self-center uppercase py-5 active:text-red-500">O nama</a>
                 @endif
                 @if (Request::segment(1) == "projects")
-                <div class="w-full justify-self-center uppercase py-5 text-red-500">Projekti</div>
+                <a href="/projects" class="w-full justify-self-center uppercase py-5 text-red-500">Projekti</a>
                 @else
                 <a href="/projects" class="w-full justify-self-center uppercase py-5 active:text-red-500">Projekti</a>
                 @endif
                 @if (Request::segment(1) == "contact-us")
-                <div class="w-full justify-self-center uppercase py-5 text-red-500">Kontakt</div>
+                <a href="/contact-us" class="w-full justify-self-center uppercase py-5 text-red-500">Kontakt</a>
                 @else
                 <a href="/contact-us" class="w-full justify-self-center uppercase py-5 active:text-red-500">Kontakt</a>
                 @endif
 
                 <div class="bg-gray-200 mt-3 shadow-neu2">
-                    <p class="text-sm text-center text-red-500 pt-2">zapratite nas na</p>
-
+                    <p class="text-sm text-center text-red-500 pt-2 uppercase">zapratite nas na</p>
                     <div class="flex justify-center h-auto gap-3 py-3">
-                        <a href="https://www.facebook.com/deltaarhlab" title="facebook" target="_blank" alt="Facebook" class="text-gray-100 bg-red-500 w-8 h-8 pt-1.5 rounded-full text-center text-sm shadow-neu2">FB</a>
-                        <a href="https://www.instagram.com/deltaarhlab" title="instagram" target="_blank" alt="Instagram" class="text-gray-100 bg-red-500 w-8 h-8 pt-1.5 rounded-full text-center text-sm shadow-neu2">IG</a>
-                        <a href="https://www.linkedin.com/company/deltaarhlab/" title="linkedin" target="_blank" alt="LinkedIn" class="text-gray-100 bg-red-500 w-8 h-8 pt-1.5 rounded-full text-center text-sm shadow-neu2">LI</a>
-                        <a href="https://github.com/DeltaArhLab" title="github" target="_blank" alt="GitHub" class="text-gray-100 bg-red-500 w-8 h-8 pt-1.5 rounded-full text-center text-sm shadow-neu2">Git</a>
-                        <a href="mailto:contactus@deltaarhlab.com" title="email" target="_blank" alt="email" class="text-gray-100 bg-red-500 w-8 h-8 pt-1.5 rounded-full text-center text-sm shadow-neu2">@</a>
+                        @foreach (App\Models\Social::get() as $social )
+                        <a href="{{$social->href}}" title="{{$social->alt}}" target="_blank" alt="{{$social->alt}}" class="w-8 h-8 rounded-full shadow-neu2 bg-red-500"><img src="{{$social->file_path}}"></a>
+                        @endforeach
                     </div>
                 </div>
             </div>

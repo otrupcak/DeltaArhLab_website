@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Project;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +24,12 @@ Route::get('/about-us', function () {
 });
 
 Route::get('/projects', function () {
-    return view('projects');
+    return view('projects.index', [
+        'projects' => Project::latest()->get()
+    ]);
 });
+
+Route::get('/projects/{project:slug}', [ProjectController::class, 'show']);
 
 Route::get('/contact-us', function () {
     return view('contact');
@@ -34,3 +40,4 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
