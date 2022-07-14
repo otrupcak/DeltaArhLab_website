@@ -10,4 +10,5 @@ class Social extends Model
     use HasFactory;
 
     protected $table = 'social';
+    public $timestamps = false;
 }

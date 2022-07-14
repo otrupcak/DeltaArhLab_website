@@ -16,7 +16,7 @@
             @if (Request::segment(1) == "projects")
             <a href="#" class="w-6/12 min-w-fit h-1/2 rounded-2xl text-red-500 bg-gradient-to-br from-[#cacaca] via-gray-200 to-gray-100 text-center py-1.5 px-2 cursor-default">Projekti</a>
             @else
-            <a href="/projects" class="w-5/12 hover:w-6/12 min-w-fit h-1/2 rounded-2xl shadow-neu1 hover:shadow-neu2 hover:text-red-500 text-center py-1.5 px-2 lg:transition-all lg:duration-300">Projekti</a>
+            <a href="#" class="w-5/12 hover:w-6/12 min-w-fit h-1/2 rounded-2xl shadow-neu1 hover:shadow-neu2 hover:text-red-500 text-center py-1.5 px-2 lg:transition-all lg:duration-300">Projekti</a>
             @endif
             @if (Request::segment(1) == "contact-us")
             <a href="#" class="w-6/12 min-w-fit h-1/2 rounded-2xl text-red-500 bg-gradient-to-br from-[#cacaca] via-gray-200 to-gray-100 text-center py-1.5 px-2 cursor-default">Kontakt</a>
@@ -60,9 +60,9 @@
                 <a href="/about-us" class="w-full justify-self-center uppercase py-5 active:text-red-500">O nama</a>
                 @endif
                 @if (Request::segment(1) == "projects")
-                <a href="/projects" class="w-full justify-self-center uppercase py-5 text-red-500">Projekti</a>
+                <a href="#" class="w-full justify-self-center uppercase py-5 text-red-500">Projekti</a>
                 @else
-                <a href="/projects" class="w-full justify-self-center uppercase py-5 active:text-red-500">Projekti</a>
+                <a href="#" class="w-full justify-self-center uppercase py-5 active:text-red-500">Projekti</a>
                 @endif
                 @if (Request::segment(1) == "contact-us")
                 <a href="/contact-us" class="w-full justify-self-center uppercase py-5 text-red-500">Kontakt</a>

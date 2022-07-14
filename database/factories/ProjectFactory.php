@@ -14,7 +14,10 @@ class ProjectFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'slug' => $this->faker->slug,
+            'title' => $this->faker->sentence(),
+            'excerpt' => $this->faker->sentence(random_int(9,15)),
+            'body' => $this->faker->realText()
         ];
     }
 }

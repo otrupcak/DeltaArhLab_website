@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration
             $table->string('title');
             $table->text('excerpt');
             $table->text('body');
+            $table->string('image_src');
 
         });
     }

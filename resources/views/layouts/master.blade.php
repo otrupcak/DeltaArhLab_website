@@ -14,12 +14,12 @@
 
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
-<body class="relative flex flex-col bg-gray-200 min-h-screen">
+<body class="relative flex flex-col bg-gray-200 min-h-screen selection:text-white">
 
     <x-header secret={{$secret}}>
     </x-header>
 
-    <main class="grow px-4 py-3 lg:px-7 lg:py-8">
+    <main id="main" class="grow px-4 py-3 lg:px-7 lg:py-8">
         {{$content}}
     </main>
 
